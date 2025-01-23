@@ -2,6 +2,8 @@ import Mover from "../models/movers-model.js";
 
 export const createMover = async (req, res) => {
   try {
+    const { moverData } = req.body;
+
     const {
       jobType,
       movingFrom,
@@ -9,7 +11,7 @@ export const createMover = async (req, res) => {
       requirements,
       additionalInfo,
       personalInfo,
-    } = req.body;
+    } = moverData;
 
     const newMover = new Mover({
       jobType,
